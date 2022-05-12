@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.post('/event', line.middleware,(req,res) => {
+app.post('/event', line.middleware(configuration),(req,res) => {
     req.body.events.map(event => {
         client.replyMessage(event.replyToken, {type: 'text', text:'Hello!'}, false)
     })
