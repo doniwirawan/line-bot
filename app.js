@@ -16,12 +16,12 @@ app.get('/', (req, res) => {
 
 app.post('/event', line.middleware(configuration),(req,res) => {
     req.body.events.map(event => {
-        client.replyMessage(event.replyToken, {type: 'text', text:event.message.text}, false)
-        if(event.message.text.includes('doni')){
+        // client.replyMessage(event.replyToken, {type: 'text', text:event.message.text}, false)
+        if(event.message.text.toLowerCase().includes('doni')){
             client.replyMessage(event.replyToken, { type: 'text', text: 'halo ini doni wirawan' }, false)
 
         }
-        if(event.message.text.includes('test')){
+        if (event.message.text.toLowerCase().includes('test')){
             client.replyMessage(event.replyToken, { type: 'text', text: 'test message' }, false)
 
         }
