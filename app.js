@@ -16,13 +16,13 @@ app.get('/', (req, res) => {
 
 app.post('/event', line.middleware(configuration),(req,res) => {
     req.body.events.map(event => {
-        // client.replyMessage(event.replyToken, {type: 'text', text:event.message.text}, false)
-        if(event.message.text.toLowerCase().includes('doni')){
-            client.replyMessage(event.replyToken, { type: 'text', text: 'halo ini doni wirawan' }, false)
+        // assign your command and text response here
+        if(event.message.text.toLowerCase().includes('/command')){
+            client.replyMessage(event.replyToken, { type: 'text', text: 'Your command get trigger here' }, false)
 
         }
-        if (event.message.text.toLowerCase().includes('test')){
-            client.replyMessage(event.replyToken, { type: 'text', text: 'test message' }, false)
+        if (event.message.text.toLowerCase().includes('/second')){
+            client.replyMessage(event.replyToken, { type: 'text', text: 'Your second command trigger here' }, false)
 
         }
     })
