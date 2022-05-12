@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
 
 app.post('/event', line.middleware(configuration),(req,res) => {
     req.body.events.map(event => {
+        // command list
+        client.replyMessage(event.replyToken, { type: 'text', text: 'Your command list: /command, /second, /creator' }, false)
+
+
         // assign your command and text response here
         if(event.message.text.toLowerCase().includes('/command')){
             client.replyMessage(event.replyToken, { type: 'text', text: 'Your command get trigger here' }, false)
