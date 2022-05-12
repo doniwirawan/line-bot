@@ -26,6 +26,12 @@ app.post('/event', line.middleware(configuration),(req,res) => {
             client.replyMessage(event.replyToken, { type: 'text', text: 'Your second command trigger here' }, false)
 
         }
+
+        // third command
+        if (event.message.text.toLowerCase().includes('/creator')) {
+            client.replyMessage(event.replyToken, { type: 'text', text: 'Doni wirawan who makes this repo' }, false)
+
+        }
     })
 
     res.status(200).send('chatbot tutorial')
