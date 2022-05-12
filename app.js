@@ -16,6 +16,8 @@ app.get('/', (req, res) => {
 
 app.post('/event', line.middleware(configuration),(req,res) => {
     req.body.events.map(event => {
+        console.log('ini event'+ event)
+        console.log('ini event reply token'+ event.replyToken)
         client.replyMessage(event.replyToken, {type: 'text', text:'Hello!'}, false)
     })
 
