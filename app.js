@@ -22,19 +22,16 @@ app.post('/event', line.middleware(configuration),(req,res) => {
         // assign your command and text response here
         if(event.message.text.toLowerCase().includes('/command')){
             client.replyMessage(event.replyToken, { type: 'text', text: 'Your command get trigger here' }, false)
-
         }
 
         // second command
         if (event.message.text.toLowerCase().includes('/second')){
             client.replyMessage(event.replyToken, { type: 'text', text: 'Your second command trigger here' }, false)
-
         }
 
         // third command
         if (event.message.text.toLowerCase().includes('/creator')) {
             client.replyMessage(event.replyToken, { type: 'text', text: 'Doni wirawan who makes this repo' }, false)
-
         }
     })
 
